@@ -1,0 +1,29 @@
+.TodoItem
+	margin-bottom: 20px
+	display: flex
+	line-height: 16px
+	.title
+		flex: 1
+		span
+			position: relative
+	.title span:after
+		content: ''
+		width: 0%
+		height: 2px
+		position: absolute
+		top: 50%
+		margin-top: -1px
+		left: 0
+		background: rgba(black, 0.5)
+		transition: width 0.1s ease-in-out
+
+	&.completed
+		color: rgba(black, 0.5)
+		.title span:after
+			width: 100%
+		
+	input[type=checkbox]
+		margin-right: 10px
+	.delete
+		color: blue
+		text-decoration: none

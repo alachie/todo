@@ -1,0 +1,52 @@
+{
+	"name": "todo",
+	"version": "1.0.0",
+	"description": "basic todo app written in react",
+	"main": "index.js",
+	"scripts": {
+		"dev": "webpack-dev-server --inline --hot",
+		"build": "NODE_ENV=production webpack --progress",
+		"cleanup": "rm README.md && sudo rm -r .git"
+	},
+	"babel": {
+		"presets": [
+			"react",
+			"es2015",
+			"stage-0"
+		],
+		"plugins": [
+			"react-html-attrs",
+			"transform-class-properties",
+			"transform-decorators-legacy"
+		]
+	},
+	"author": "",
+	"license": "MIT",
+	"devDependencies": {
+		"autoprefixer": "*",
+		"babel-core": "*",
+		"babel-loader": "*",
+		"babel-plugin-add-module-exports": "*",
+		"babel-plugin-react-html-attrs": "*",
+		"babel-plugin-transform-class-properties": "*",
+		"babel-plugin-transform-decorators-legacy": "*",
+		"babel-preset-es2015": "*",
+		"babel-preset-react": "*",
+		"babel-preset-stage-0": "*",
+		"css-loader": "*",
+		"node-sass": "^4.0.0",
+		"postcss-loader": "*",
+		"sass-loader": "^6.0.6",
+		"style-loader": "*",
+		"webpack": "*",
+		"webpack-dev-server": "*"
+	},
+	"dependencies": {
+		"classnames": "^2.2.5",
+		"normalize-sass": "^1.0.0",
+		"react": "*",
+		"react-dom": "*",
+		"react-redux": "^5.0.5",
+		"redux": "^3.6.0"
+	}
+}
