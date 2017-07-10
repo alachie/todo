@@ -84,3 +84,4 @@ Temporary Items
 bundle.js
 bundle.min.js
 bundle.js.map
+variables.env

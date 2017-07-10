@@ -4,7 +4,9 @@
 	"description": "basic todo app written in react",
 	"main": "index.js",
 	"scripts": {
-		"dev": "webpack-dev-server --inline --hot",
+		"dev": "concurrently \"yarn run dev:server\" \"yarn run dev:client\" --names \"⚡ ,⚛️ \" --prefix name",
+		"dev:server": "nodemon --exec babel-node src/server/index.js",
+		"dev:client": "webpack-dev-server --inline --hot",
 		"build": "NODE_ENV=production webpack --progress",
 		"cleanup": "rm README.md && sudo rm -r .git"
 	},
@@ -42,7 +44,18 @@
 		"webpack-dev-server": "*"
 	},
 	"dependencies": {
+		"babel-cli": "^6.24.1",
+		"body-parser": "^1.17.2",
 		"classnames": "^2.2.5",
+		"concurrently": "^3.5.0",
+		"cors": "^2.8.3",
+		"dotenv": "^4.0.0",
+		"express": "^4.15.3",
+		"graphql": "^0.10.3",
+		"graphql-server-express": "^1.0.0",
+		"graphql-tools": "^1.1.0",
+		"mongoose": "^4.11.1",
+		"nodemon": "^1.11.0",
 		"normalize-sass": "^1.0.0",
 		"react": "*",
 		"react-dom": "*",
