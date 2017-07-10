@@ -10,8 +10,7 @@ export default class TodoItem extends React.Component {
 		const index = todos.findIndex(todo => todo.id === data.id);
 		todos[index].completed = !data.completed;
 		
-		this.props.gSetState({todos});
-		localStorage.setItem("todos", JSON.stringify(this.props.gState.todos));
+		this.updateState(todos);
 	}
 
 	handleDelete(e) {
@@ -21,11 +20,14 @@ export default class TodoItem extends React.Component {
 
 		const index = todos.findIndex(todo => todo.id === id);
 		todos.splice(index, 1);
-		
-		this.props.gSetState({todos});
-		
-		localStorage.setItem("todos", JSON.stringify(this.props.gState.todos));
+
+		this.updateState(todos);
 	}
+
+	updateState(newState) {
+		this.props.gSetState({newState});
+		localStorage.setItem("todos", JSON.stringify(this.props.gState.todos));
+	} 
 
 
 	render() {
@@ -33,7 +35,8 @@ export default class TodoItem extends React.Component {
 		const classes = classNames({
 			"TodoItem": true,
 			"completed": data.completed
-		})
+		});
+		
 		return (
 			<li className={classes}>
 				<input type="checkbox" checked={data.completed} onChange={this.handleChange.bind(this)}/>
