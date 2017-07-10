@@ -15,7 +15,7 @@ export default class TodoList extends React.Component {
 
 		return (
 			<ul className="TodoList">
-				{this.props.todos.map(o => (<TodoItem data={o} globalState={this.props.gState} updateState={this.props.gSetState} key={o.id} />))}
+				{this.props.todos.map(o => (<TodoItem data={o} gState={this.props.gState} gSetState={this.props.gSetState} key={o.id} />))}
 			</ul>
 		)
 	}
